@@ -12,7 +12,28 @@
         <title>Customer home page</title>
     </head>
     <body>
-        <h1>Hello <%=request.getParameter( "email" )%> </h1>
-        You are now logged in as a customer of our wonderful site.
+        <h3>Hello <%=request.getParameter("email")%> </h3>
+
+        This is where you will input order
+
+        <form action="FrontController" method="POST">
+            <input type="hidden" name="command" value="ordered">
+            <div class="height">
+                <label> Height</label><input type="number" name="height" max="99" required value="4"/>
+            </div>            
+            <div class="length">
+                <label> Length</label><input type="number" name="length" max="999" required value="6"/>
+            </div>            
+            <div class="width">
+                <label> Width</label><input type="number" name="Width" max="999" required value="1"/>
+            </div>            
+            <div class="amount">
+                <label> Amount</label><input type="number" name="amount" max="999" required value="1"/>
+            </div>            
+            <form name="customerpage" action="FrontController" method="POST">
+                <input type="hidden" name="command" value="ordered">
+                <input type="submit" value="Order">
+            </form>
+
     </body>
 </html>
