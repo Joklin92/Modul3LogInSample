@@ -58,4 +58,57 @@ public class UserMapper {
         }
     }
 
+        public User getUse(int id) throws ClassNotFoundException //to test in main
+    {
+        User u = null;
+        try 
+        {
+            Connection con = Connector.connection();
+
+            String sql = "SELECT * FROM useradmin.users where id = '" + id + "'";
+            PreparedStatement ps = con.prepareStatement( sql );
+            ResultSet resultset = ps.executeQuery();
+
+            while (resultset.next()) 
+            {
+                int userid = resultset.getInt("users.id");
+                String email = resultset.getString("email");
+                String userpassword = resultset.getString("password");
+                String role = resultset.getString("role");
+                u = new User(userid, email, userpassword, role);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return u;
+    }
+    
+    public static User getUser(int id) throws ClassNotFoundException //included in logic facade
+    {
+        User u = null;
+        try 
+        {
+            Connection con = Connector.connection();
+
+            String sql = "SELECT * FROM useradmin.users where id = '" + id + "'";
+            PreparedStatement ps = con.prepareStatement( sql );
+            ResultSet resultset = ps.executeQuery();
+
+            while (resultset.next()) 
+            {
+                int userid = resultset.getInt("users.id");
+                String email = resultset.getString("email");
+                String userpassword = resultset.getString("password");
+                String role = resultset.getString("role");
+                u = new User(userid, email, userpassword, role);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return u;
+    }
 }
