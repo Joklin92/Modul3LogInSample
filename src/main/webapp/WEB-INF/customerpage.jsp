@@ -4,6 +4,7 @@
     Author     : kasper
 --%>
 
+<%@page import="FunctionLayer.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,12 @@
         <title>Customer home page</title>
     </head>
     <body>
-        <h3>Hello <%=request.getParameter("email")%> </h3>
+        
+        <%
+            User user = (User)session.getAttribute("user");
+            %>
+        
+        <h3>Hello <%= user.getEmail()%> </h3>
 
         This is where you will input order
 
