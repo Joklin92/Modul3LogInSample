@@ -25,16 +25,14 @@
         <form action="FrontController" method="POST">
             <input type="hidden" name="command" value="ordered">
             <div class="height">
-                <label> Height</label><input type="number" name="height" max="99" required value="4"/>
+                <label> Height</label><input type="number" name="height" max="99" required value="1"/>
             </div>            
             <div class="length">
-                <label> Length</label><input type="number" name="length" max="999" required value="6"/>
+                <label> Length</label><input type="number" name="length" max="999" required value="1"/>
             </div>            
             <div class="width">
                 <label> Width</label><input type="number" name="width" max="999" required value="1"/>
             </div>                        
-            <form name="customerpage" action="FrontController" method="POST">
-                <input type="hidden" name="command" value="ordered">
                 <input type="submit" value="Order">
             </form>
 

@@ -5,7 +5,9 @@
  */
 package PresentationLayer;
 
+import DBAccess.OrderMapper;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.PreOrder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,12 +16,23 @@ import javax.servlet.http.HttpServletResponse;
  * @author Dorte
  */
 public class CustomerPage extends Command {
-    
+        OrderMapper om = new OrderMapper();
+    int userID = 0;
+    int length = 0;
+    int width = 0;
+    int height = 0;
+            
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
-       
-    
-  return "customerpage";
+        userID = Integer.parseInt(request.getParameter("id"));
+        length = Integer.parseInt(request.getParameter("length"));
+        width = Integer.parseInt(request.getParameter("width"));
+        height = Integer.parseInt(request.getParameter("height"));
+
+        PreOrder pre = new PreOrder(userID, length, width, height);
+
+        om.createPreOrder(pre);
+        return "ordered";
 }
 
 }
