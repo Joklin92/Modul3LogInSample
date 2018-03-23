@@ -2,6 +2,7 @@ package Test;
 
 import DBAccess.OrderMapper;
 import FunctionLayer.Employee;
+import PresentationLayer.EmployeePage;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -32,6 +33,7 @@ public class Main
         
         System.out.println(emp.getOrderID().toString().replace("[","").replace("]","").replace(",",""));
         orderID = om.getAllOrders();
+      //  om.sendOrder(2);
         
         for (int i = 0; i < orderID.size(); i++) {
             System.out.println(orderID.get(i));

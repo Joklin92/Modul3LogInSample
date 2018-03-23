@@ -31,11 +31,8 @@
                 <label> Length</label><input type="number" name="length" max="999" required value="6"/>
             </div>            
             <div class="width">
-                <label> Width</label><input type="number" name="Width" max="999" required value="1"/>
-            </div>            
-            <div class="amount">
-                <label> Amount</label><input type="number" name="amount" max="999" required value="1"/>
-            </div>            
+                <label> Width</label><input type="number" name="width" max="999" required value="1"/>
+            </div>                        
             <form name="customerpage" action="FrontController" method="POST">
                 <input type="hidden" name="command" value="ordered">
                 <input type="submit" value="Order">

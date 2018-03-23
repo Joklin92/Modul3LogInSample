@@ -4,6 +4,7 @@
     Author     : kasper
 --%>
 
+<%@page import="FunctionLayer.User"%>
 <%@page import="FunctionLayer.Employee"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,15 +16,16 @@
     <body>
     <center>
         <%
+            User user = (User)session.getAttribute("user");
             Employee emp = new Employee();
             emp.idList();
             %>
         
-        <h1>Hello <%=request.getParameter("email")%> </h1>
+        <h1>Hello <%= user.getEmail()%> </h1>
         You are now logged in as a EMPLOYEE of our wonderful site.
         
                     <form name="employeepage" action="FrontController" method="POST">
-                <input type="text" name="username" value="" placeholder="Order ID" />
+                        orderId<input type="number" name="orderID" placeholder="Order ID" required value="1"/>
                 <input type="hidden" name="command" value="employeepage" />
                 <input type="submit" value="Confirm Order" />
             </form>

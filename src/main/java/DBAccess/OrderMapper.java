@@ -100,12 +100,12 @@ public class OrderMapper
          return ids;
      } 
      
-     public void sendOrder(String id) throws SQLException, ClassNotFoundException {
+     public void sendOrder(int id) {
          
         try 
         {
             Connection con = Connector.connection();
-            String SQL = "update preorders set sent= '1' where id= '"+id+"'";
+            String SQL = "update preorders set orderConfirmed= '1' where id= '"+id+"'";
             
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS ); 
            // ps.setInt(1, user.getId()); //user id
@@ -113,8 +113,8 @@ public class OrderMapper
             System.out.println("Check sql order " + SQL);
             
             ps.executeUpdate();
-            } catch(SQLException e) {
-        e.printStackTrace();
+            } catch( SQLException | ClassNotFoundException ex) {
+        throw new Error( ex.getMessage() );
 }
 
 
