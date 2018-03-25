@@ -14,6 +14,7 @@ public class EmployeePage extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException{
         
             id = Integer.parseInt(request.getParameter("orderID")); 
+            
             om.sendOrder(id);
             
         return "employeepage";

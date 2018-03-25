@@ -38,7 +38,7 @@ create table `brickinfo` (
 
 
 LOCK TABLES `users` WRITE;
-INSERT INTO `users` VALUES (1,'malik@sharfo.com','batman','employee');
+INSERT INTO `users` VALUES (1,'joklin@live.dk','holm1992','employee');
 UNLOCK TABLES;
 insert into `brickinfo` (`type`, `length`, `width`, `height`) values ('small', 1, 2, 1), ('medium', 2, 2, 1), ('big', 4, 2, 1);
 

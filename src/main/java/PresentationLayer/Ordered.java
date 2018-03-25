@@ -25,14 +25,12 @@ public class Ordered extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
         HttpSession session = request.getSession();
-        
         userID = (int)session.getAttribute("id");
         length = Integer.parseInt(request.getParameter("length"));
         width = Integer.parseInt(request.getParameter("width"));
         height = Integer.parseInt(request.getParameter("height"));
 
         PreOrder pre = new PreOrder(userID, length, width, height);
-
         om.createPreOrder(pre);
         return "ordered";
     }

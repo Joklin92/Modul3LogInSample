@@ -28,6 +28,8 @@
                         orderId<input type="number" name="orderID" placeholder="Order ID" required value="1"/>
                 <input type="hidden" name="command" value="employeepage" />
                 <input type="submit" value="Confirm Order" />
+                
+                
             </form>
         
         <br><br>Order ids: <br><br><%= emp.getOrderID().toString().replace("[","").replace("]","").replace(",","")+"<br>"%><br>

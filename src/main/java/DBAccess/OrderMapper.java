@@ -111,14 +111,14 @@ public class OrderMapper
         
         return history;
     }
-    public static List<PreOrder> orderHistory(PreOrder order)
+    public static List<PreOrder> orderHistory(int ID)
     {
         List<PreOrder> history = new ArrayList<>();
         PreOrder ord = null;
         try 
         {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM useradmin.preorders where userID = " + order.getUserId();
+            String SQL = "SELECT * FROM useradmin.preorders where userID = " + ID;
             
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet resultset = ps.executeQuery();
@@ -131,7 +131,7 @@ public class OrderMapper
                 int width = resultset.getInt("width");
                 int height = resultset.getInt("height");
                 
-                if(userID == order.getUserId())
+                if(userID == ID)
                 {
                     ord = new PreOrder(userID, length, width, height);
                     history.add(ord);
@@ -146,20 +146,20 @@ public class OrderMapper
         return history;
     }
     
-         public ArrayList<Integer> getAllOrders() throws ClassNotFoundException, SQLException {
+    public ArrayList<Integer> getAllOrders() throws ClassNotFoundException, SQLException {
          ArrayList<Integer> ids = new ArrayList<>();
          
          try {
              Connection con = Connector.connection();
-             String sql = "Select id from preorders"; //useradmin.preorders
+             String sql = "Select id from preorders order by id"; //useradmin.preorders
              
              PreparedStatement ps = con.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS );
              
              ResultSet resultset = ps.executeQuery(sql);
 
             while (resultset.next()) {
-                int userId = resultset.getInt("id");
-                ids.add(userId);
+                int orderId = resultset.getInt("id");
+                ids.add(orderId);
             }
              
          } catch (SQLException e) {
@@ -167,6 +167,29 @@ public class OrderMapper
          }        
          return ids;
      } 
+    
+    public boolean isOrderSent(int id) throws ClassNotFoundException {
+            int sent = 0;
+        try {
+             Connection con = Connector.connection();
+             String sql = "Select orderConfirmed from preorders where id= '" + id +"'"; //useradmin.preorders
+             
+             PreparedStatement ps = con.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS );
+             
+             ResultSet resultset = ps.executeQuery(sql);
+
+            while (resultset.next()) {
+                sent = resultset.getInt("orderConfirmed");                
+            }
+            if (sent == 1) return true;
+                
+             
+         } catch (SQLException e) {
+             e.printStackTrace();
+         }        
+         return false;
+     } 
+    
      
      public void sendOrder(int id) {
          
@@ -188,4 +211,5 @@ public class OrderMapper
 
          
      }
+     
 }

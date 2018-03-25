@@ -1,10 +1,14 @@
 package FunctionLayer;
 
+import java.util.List;
+
+
 /**
  * The purpose of User is to...
  * @author kasper
  */
 public class User {
+
 
     public User( String email, String password, String role ) {
         this.email = email;
@@ -22,7 +26,17 @@ public class User {
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;
     private String password; // Should be hashed and all
-    private String role;
+    private String role;    
+    private List<PreOrder> recent;
+
+    public void setRecent(List<PreOrder> recent) {
+        this.recent = recent;
+    }
+
+    public List<PreOrder> getRecent() {
+        return recent;
+    }
+
 
     public String getEmail() 
     {

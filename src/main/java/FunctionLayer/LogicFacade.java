@@ -32,8 +32,8 @@ public class LogicFacade {
         return order;
     }
      
-    public static List<PreOrder> orderHistory(PreOrder o) {
-        return OrderMapper.orderHistory(o);
+    public static List<PreOrder> orderHistory(int i) {
+        return OrderMapper.orderHistory(i);
     }
 
     public static Calculation Calculate(PreOrder order) throws ClassNotFoundException {
