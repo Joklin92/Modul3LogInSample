@@ -1,5 +1,7 @@
 
 
+<%@page import="sun.security.util.Length"%>
+<%@page import="FunctionLayer.Calculation"%>
 <%@page import="DBAccess.OrderMapper"%>
 <%@page import="FunctionLayer.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,6 +15,7 @@
                 <%
                     User user = (User)session.getAttribute("user");
             OrderMapper om = new OrderMapper();
+            Calculation calc = new Calculation();
             %>
         
         <h1>Thanks for ordering</h1>
@@ -21,6 +24,9 @@
                         <input type="submit" value="Orderhistory">
                     </form>
               
+        Order<br><br>
+
+        
     </body>
         
     
