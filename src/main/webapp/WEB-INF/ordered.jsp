@@ -22,11 +22,11 @@
         <h1>Thanks for ordering</h1>
          <table border="1">
             <tr>
-                <th><p>Klodstype</th>
-                <th><p>Hus forside</th>
-                <th><p>Hus bagside</th>
-                <th><p>Gavle, ialt</th>
-                <th><p>Total antal per type</th>
+                <th><p>Brick type</th>
+                <th><p>house length</th>
+                <th><p>house width</th>
+                <th><p>sides total</th>
+                <th><p>Total bricks each type</th>
             </tr>
             <tr>
                 <th><p>1x2</th>
