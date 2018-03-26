@@ -13,25 +13,25 @@
         <title>Ordered</title>
     </head>
     <body>
-                <%
-                    User user = (User)session.getAttribute("user");
-                    PreOrder pre = (PreOrder)session.getAttribute("pre");
+        <%
+            User user = (User) session.getAttribute("user");
+            PreOrder pre = (PreOrder) session.getAttribute("pre");
             OrderMapper om = new OrderMapper();
             Calculation calc = new Calculation();
-            %>
+        %>
         <h1>Thanks for ordering</h1>
-         <table border="1">
+        <table border="1">
             <tr>
                 <th><p>Brick type</th>
                 <th><p>house length</th>
                 <th><p>house width</th>
                 <th><p>sides total</th>
                 <th><p>Total bricks each type</th>
-                <% calc.getUnevenLength();
-                calc.getEvenLength();
-                calc.getUnevenWidth();
-                calc.getEvenWidth();
-                %>
+                    <% calc.getUnevenLength();
+                        calc.getEvenLength();
+                        calc.getUnevenWidth();
+                        calc.getEvenWidth();
+                    %>
             </tr>
             <tr>
                 <th><p>1x2</th>
@@ -56,14 +56,14 @@
             </tr>
         </table>
         <form name="ordered" action="FrontController" method="POST">
-                        <input type="hidden" name="command" value="orderhistory">
-                        <input type="submit" value="Orderhistory">
-                    </form>
-              
+            <input type="hidden" name="command" value="orderhistory">
+            <input type="submit" value="Orderhistory">
+        </form>
+
         Order<br><br>
 
-        
+
     </body>
-        
-    
+
+
 </html>
