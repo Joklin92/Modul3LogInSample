@@ -38,27 +38,30 @@
                 <th><p>1x2</th>
                 <td><p><%out.print(session.getAttribute("1x2 Length ")); %></td>
                 <td><p><%out.print(session.getAttribute("1x2 Width ")); %></td>
-                <td><p><%out.print("lerp"); %></td>
-                <td><p><%out.print("lerp"); %></td>
-                <td><p><%out.print("werp");%></td>
+                <td><p><%out.print(session.getAttribute("1x2 Length total bricks ")); %></td>
+                <td><p><%out.print(session.getAttribute("1x2 Width total bricks ")); %></td>
+                <td><p><%out.print(session.getAttribute("1x2 total bricks ")); %></td>
+
             </tr>
             <tr>
                 <th><p>2x2</th>
                 <td><p><%out.print(session.getAttribute("2x2 Length ")); %></td>
                 <td><p><%out.print(session.getAttribute("2x2 Width ")); %></td>
-                <td><p><%out.print("lurp"); %></td>
-                <td><p><%out.print("lurp"); %></td>
-                <td><p><%out.print("wurp");%></td>
+                <td><p><%out.print(session.getAttribute("2x2 Length total bricks ")); %></td>
+                <td><p><%out.print(session.getAttribute("2x2 Width total bricks ")); %></td>
+                <td><p><%out.print(session.getAttribute("2x2 total bricks ")); %></td>
             </tr>
             <tr>
                 <th><p>4x2</th>
                 <td><p><%out.print(session.getAttribute("4x2 Length ")); %></td>
                 <td><p><%out.print(session.getAttribute("4x2 Width ")); %></td>
-                <td><p><%out.print("larp"); %></td>
-                <td><p><%out.print("larp"); %></td>
-                <td><p><%out.print("warp");%></td>
-            </tr>
+                <td><p><%out.print(session.getAttribute("4x2 Length total bricks ")); %></td>
+                <td><p><%out.print(session.getAttribute("4x2 Width total bricks ")); %></td>
+                <td><p><%out.print(session.getAttribute("4x2 total bricks ")); %></td>
         </table>
+        <br>
+        *this itemlist represents the bottom two layers
+        <br>
         <form name="ordered" action="FrontController" method="POST">
             <input type="hidden" name="command" value="orderhistory">
             <input type="submit" value="Orderhistory">
