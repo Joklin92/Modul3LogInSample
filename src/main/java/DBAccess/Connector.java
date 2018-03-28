@@ -1,5 +1,5 @@
 package DBAccess;
-//thing goes skraa
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,10 +12,10 @@ import java.sql.SQLException;
 public class Connector {
 
  //   private static final String URL = "jdbc:mysql://46.101.253.149:3306/useradmin";
-    private static final String URL = "jdbc:mysql://207.154.247.94/useradmin";
-  //  private static final String URL = "jdbc:mysql://localhost:3306/useradmin?serverTimezone=UTC";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "holm1992";
+  //  private static final String URL = "jdbc:mysql://207.154.247.94/useradmin";
+    private static final String URL = "jdbc:mysql://localhost:3306/useradmin?serverTimezone=UTC";
+    private static final String USERNAME = "Joklin";
+    private static final String PASSWORD = "Holm1992";
 
     private static Connection singleton;
 

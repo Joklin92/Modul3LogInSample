@@ -35,10 +35,12 @@ public class Ordered extends Command {
 
         Calculation c = LogicFacade.Calculate(pre); //not sure if works
 
-        session.setAttribute("evenLegoPieces one ", c.getEvenLength()); //save this in session
-        session.setAttribute("unevenLegoPieces two ", c.getUnevenLength()); //save this in session
-        session.setAttribute("evenLegoPieces three ", c.getEvenWidth()); //save this in session
-        session.setAttribute("evenLegoPieces four ", c.getUnevenWidth()); //save this in session
+        session.setAttribute("1x2 Length ", c.getLengthResult().get(2)); //save this in session
+        session.setAttribute("1x2 Width ", c.getWidthResult().get(2)); //save this in session
+        session.setAttribute("2x2 Length ", c.getLengthResult().get(1)); //save this in session
+        session.setAttribute("2x2 Width ", c.getWidthResult().get(1)); //save this in session
+        session.setAttribute("4x2 Length ", c.getLengthResult().get(0)); //save this in session
+        session.setAttribute("4x2 Width ", c.getWidthResult().get(0)); //save this in session
 
         om.createPreOrder(pre);
         return "ordered";

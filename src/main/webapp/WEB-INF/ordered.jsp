@@ -23,9 +23,10 @@
         <table border="1">
             <tr>
                 <th><p>Brick type</th>
-                <th><p>house length</th>
-                <th><p>house width</th>
-                <th><p>sides total</th>
+                <th><p>House length</th>
+                <th><p>House width</th>
+                <th><p>Length total</th> 
+                <th><p>Width total</th>
                 <th><p>Total bricks each type</th>
                     <% calc.getUnevenLength();
                         calc.getEvenLength();
@@ -35,22 +36,25 @@
             </tr>
             <tr>
                 <th><p>1x2</th>
-                <td><p><%out.print(session.getAttribute("evenLegoPieces one ")); %></td>
-                <td><p><%out.print(session.getAttribute("unevenLegoPieces two ")); %></td>
+                <td><p><%out.print(session.getAttribute("1x2 Length ")); %></td>
+                <td><p><%out.print(session.getAttribute("1x2 Width ")); %></td>
+                <td><p><%out.print("lerp"); %></td>
                 <td><p><%out.print("lerp"); %></td>
                 <td><p><%out.print("werp");%></td>
             </tr>
             <tr>
                 <th><p>2x2</th>
-                <td><p><%out.print(session.getAttribute("unevenLegoPieces three ")); %></td>
-                <td><p><%out.print(session.getAttribute("unevenLegoPieces four ")); %></td>
+                <td><p><%out.print(session.getAttribute("2x2 Length ")); %></td>
+                <td><p><%out.print(session.getAttribute("2x2 Width ")); %></td>
+                <td><p><%out.print("lurp"); %></td>
                 <td><p><%out.print("lurp"); %></td>
                 <td><p><%out.print("wurp");%></td>
             </tr>
             <tr>
                 <th><p>4x2</th>
-                <td><p><%out.print("darp"); %></td>
-                <td><p><%out.print("sarp"); %></td>
+                <td><p><%out.print(session.getAttribute("4x2 Length ")); %></td>
+                <td><p><%out.print(session.getAttribute("4x2 Width ")); %></td>
+                <td><p><%out.print("larp"); %></td>
                 <td><p><%out.print("larp"); %></td>
                 <td><p><%out.print("warp");%></td>
             </tr>

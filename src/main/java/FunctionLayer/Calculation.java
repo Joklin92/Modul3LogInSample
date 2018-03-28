@@ -26,6 +26,8 @@ public class Calculation
     private ArrayList<Integer> evenLength = new ArrayList<>(); //above bottom
     private ArrayList<Integer> unevenWidth = new ArrayList<>();
     private ArrayList<Integer> evenWidth = new ArrayList<>();
+    private ArrayList<Integer> lengthResult = new ArrayList<>();
+    private ArrayList<Integer> widthResult = new ArrayList<>();
     private ArrayList<Integer> totalBricks = new ArrayList<>();
     
     
@@ -123,6 +125,16 @@ public class Calculation
         return evenLength;
     }
     
+    public ArrayList<Integer> combinedLength(ArrayList<Integer> uneven, ArrayList<Integer> even) {
+        for (int i = 0; i < uneven.size(); i++) {
+            if (i == 0) {
+                lengthResult.add(uneven.get(i));
+            } else lengthResult.add(uneven.get(i) + even.get(i-1));
+        }
+        return lengthResult;
+    }
+    
+    
     //3. Follows same idea as number 1
     public ArrayList<Integer> brickUnevenLayerWidth(int customerHouseWidth) throws ClassNotFoundException
     {
@@ -192,6 +204,14 @@ public class Calculation
         return evenWidth;
     }
     
+    public ArrayList<Integer> combinedWidth(ArrayList<Integer> uneven, ArrayList<Integer> even) {
+        for (int i = 0; i < uneven.size(); i++) {
+            if (i == 0) {
+                widthResult.add(uneven.get(i));
+            } else widthResult.add(uneven.get(i) + even.get(i-1));
+        }
+        return widthResult;
+    }
     //5. Calculates total amount of bricks, using input from the customer of 3 int parameters
     public int totalBricks(PreOrder ord) throws ClassNotFoundException
     {
@@ -199,9 +219,11 @@ public class Calculation
         
         brickUnevenLayerLength(ord.getLength());
         brickEvenLayerLength(ord.getLength()); //add the total of these two above together somehow^, OBS see added here below
+        combinedLength(unevenLength, evenLength);
         
         brickUnevenLayerWidth(ord.getWidth());
         brickEvenLayerWidth(ord.getWidth());
+        combinedWidth(unevenWidth, evenWidth);
         
         int brickCountLength = 0;
         brickCountLength += totalCounterEven + totalCounterUneven; //added here
@@ -255,5 +277,13 @@ public class Calculation
     public ArrayList<Integer> getTotalBricks() 
     {
         return totalBricks;
+    }
+
+    public ArrayList<Integer> getLengthResult() {
+        return lengthResult;
+    }
+
+    public ArrayList<Integer> getWidthResult() {
+        return widthResult;
     }
 }
