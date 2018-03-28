@@ -1,9 +1,5 @@
 package FunctionLayer;
 
-/**
- *
- * @author malik
- */
 public class PreOrder 
 {
     private int id; //id of order

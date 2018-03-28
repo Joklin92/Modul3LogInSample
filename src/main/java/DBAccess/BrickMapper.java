@@ -8,10 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author malik
- */
 public class BrickMapper 
 {
     public List<Bricks> getAllBottoms() throws ClassNotFoundException 

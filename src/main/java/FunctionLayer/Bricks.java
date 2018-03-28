@@ -1,9 +1,5 @@
 package FunctionLayer;
 
-/**
- *
- * @author malik
- */
 public class Bricks 
 {
     private int id;

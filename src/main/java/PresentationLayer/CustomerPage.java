@@ -14,10 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Dorte
- */
 public class CustomerPage extends Command {
     OrderMapper om = new OrderMapper();
     int userID = 0;

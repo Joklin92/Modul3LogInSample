@@ -9,10 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author malik
- */
 public class OrderMapper 
 {
     public void createPreOrder(PreOrder ord) //To test in main

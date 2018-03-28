@@ -3,10 +3,6 @@ package FunctionLayer;
 import DBAccess.BrickMapper;
 import java.util.ArrayList;
 
-/**
- *
- * @author malik
- */
 public class Calculation 
 {
     private BrickMapper b = new BrickMapper();
