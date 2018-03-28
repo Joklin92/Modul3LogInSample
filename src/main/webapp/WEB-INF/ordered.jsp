@@ -62,14 +62,11 @@
         <br>
         *this itemlist represents the bottom two layers
         <br>
+        <br>
         <form name="ordered" action="FrontController" method="POST">
             <input type="hidden" name="command" value="orderhistory">
             <input type="submit" value="Orderhistory">
         </form>
-
-        Order<br><br>
-
-
     </body>
 
 
